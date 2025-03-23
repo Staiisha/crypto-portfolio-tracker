@@ -1,0 +1,92 @@
+$primary-color: #6200ee;
+$secondary-color: #03dac6; 
+$background-color: #f5f5f5; 
+$text-color: #333333; 
+$border-color: #e0e0e0; 
+$error-color: #ff1744; 
+$font-family: 'Roboto', sans-serif; 
+
+.formContainer {
+  max-width: 400px;
+  margin: 0 auto;
+  padding: 24px;
+  background-color: white;
+  border-radius: 12px;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+}
+
+
+input {
+  width: 90%;
+  padding: 12px 16px;
+  margin-bottom: 16px;
+  border: 1px solid $border-color;
+  border-radius: 8px;
+  font-size: 16px;
+  font-family: $font-family;
+  transition: all 0.3s ease;
+
+  &:focus {
+    border-color: $primary-color;
+    outline: none;
+    box-shadow: 0 0 8px rgba($primary-color, 0.2);
+  }
+
+  &[readonly] {
+    background-color: $background-color;
+    cursor: not-allowed;
+  }
+}
+
+.searchResults {
+  max-height: 200px;
+  overflow-y: auto;
+  margin-bottom: 16px;
+  border: 1px solid $border-color;
+  border-radius: 8px;
+  background-color: white;
+
+  .searchResultItem {
+    padding: 12px 16px;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+
+    &:hover {
+      background-color: rgba($primary-color, 0.05);
+    }
+
+    &:active {
+      background-color: rgba($primary-color, 0.1);
+    }
+  }
+}
+
+
+button {
+  width: 100%;
+  padding: 12px 16px;
+  background-color: $secondary-color;
+  color: white;
+  border: none;
+  border-radius: 8px;
+  font-size: 16px;
+  font-family: $font-family;
+  font-weight: 500;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+
+  &:hover {
+    background-color: darken($secondary-color, 10%);
+  }
+
+  &:active {
+    transform: scale(0.98);
+  }
+}
+
+.errorMessage {
+  color: $error-color;
+  font-size: 14px;
+  margin-bottom: 16px;
+  text-align: center;
+}
